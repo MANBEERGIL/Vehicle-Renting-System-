@@ -54,7 +54,7 @@ class Owner: Person{
                           throw ErrorHandling.InvalidMobileNumber
                      }
               if emailId.isEmailValid(email:emailId){
-                 
+                  self.emailId = emailId
               }
               else{
                    throw ErrorHandling.InvalidEmail
