@@ -11,7 +11,8 @@ enum carTypes
 {
     case BMW,AUDI
 }
-class Car:Vehicle{
+class Car:Vehicle
+{
     
     var vehicleType: VehicleTypes
     
@@ -46,6 +47,7 @@ class Car:Vehicle{
         self.manufacturerName = manufacturerName
         self.isSelfDrive = isSelfDrive
         if isSelfDrive==false{
+            
         self.driverName = driverName
         }
         self.isInsured = isInsured
