@@ -87,7 +87,12 @@ extension String{
                                                }
                                            }
 
-                                     
+                                     extension Float{
+                                                                                 func currency() -> String
+                                                                                 {
+                                                                                     return "$\(self)"
+                                                                                 }
+                                                                             }
 
 
 
