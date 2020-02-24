@@ -59,4 +59,38 @@ extension String{
                       }
                      
                       }
-                  
+                  extension Int{
+                      
+                     func isMobileNumberValid(mobile:Int) -> Bool{
+                      return true/*//https://stackoverflow.com/questions/27998409/email-phone-validation-in-swift
+                      let mobileNumberRegEx = "[0-9]{10}"
+                      let mobileTest = NSPredicate(format: "SELF MATCHES %@", mobileNumberRegEx)
+                      return mobileTest.evaluate(with: mobile)*/
+                      }
+                      func km()->String{
+                          return "\(self)km"
+                      }
+                      func currency() -> String
+                             {
+                                 return "$\(self)"
+                             }
+                      func speed()->String
+                      {
+                          return "\(self)km\\hr"
+                      }
+                  }
+
+                      extension Double{
+                                               func currency() -> String
+                                               {
+                                                   return "$\(self)"
+                                               }
+                                           }
+
+                                     
+
+
+
+
+
+
