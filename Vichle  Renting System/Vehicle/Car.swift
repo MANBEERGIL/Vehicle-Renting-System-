@@ -7,7 +7,8 @@
 //
 
 import Foundation
-enum carTypes {
+enum carTypes
+{
     case BMW,AUDI
 }
 class Car:Vehicle{
