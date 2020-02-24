@@ -9,8 +9,7 @@
 import Foundation
 
 do{
-    let o1=try Owner(id: 01, firstName: "Komal", lastName: "subhra", gender: .FEMALE, birthDate: "22/07/1998",address:"43 drink water",city:"brampton", mobileNumber: 8976574567, emailId: "cutykomal@gmail.com", userName: "cuty123", password: "subhra567",companyTitle:"longes",businessLandLineNumber:"(418)678567",website:"www.komu.com")
-    let o2=try Owner(id: 02, firstName: "geetanjali", lastName: "gupta", gender: .FEMALE, birthDate: "26/07/1996",address:"43 gorewood water",city:"brampton", mobileNumber: 7876574567, emailId: "geetgupta@gmail.com", userName: "geeth", password: "thg56",companyTitle:"longes",businessLandLineNumber:"(418)678674",website:"www.geetwork.com")
+    
     
     let d1=try Driver(id: 1, firstName: "mohsin", lastName: "khan", gender: .MALE, birthDate: "22/10/1992",address:"31 park ave",city:"Brampton", mobileNumber: 6598764567, emailId: "mohsinkhan@yahoo.com", userName:"mohsin123",
         password:"aksd23",drivingLicenseNumber:"DRI78TY",isDrivingHistoryCleared:true,salary:700)
