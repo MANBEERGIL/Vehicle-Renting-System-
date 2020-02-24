@@ -19,11 +19,6 @@ protocol Person:DisplayDelegate{
     var birthDate:String{get set}
     var age : String?{get set}
     var address:String { get set }
-    var city :String { get set }
-    var mobileNumber:Int{get set}
-    var emailId:String{get set}
-    var userName:String{get set}
-   
     
     
     
