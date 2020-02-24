@@ -95,15 +95,11 @@ class MotorCycle: Vehicle
             print("IT IS SELF DRIVE")
             print("*******************************************************")
         }
-        else{
-            for i in driver{
-            i.value.display()
-            print("*******************************************************")
-        }
+       
       
         }
         
     }
     
 
-
+}
