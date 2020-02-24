@@ -11,9 +11,7 @@ enum  VehicleTypes {
     case BUS,CAR,MOTORCYCLE
 }
 
-enum typesOfFuel{
-    case PETROL,DIESEL
-}
+
 
 protocol Vehicle:DisplayDelegate
 {
