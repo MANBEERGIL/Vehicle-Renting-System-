@@ -97,16 +97,19 @@ class Bus: Vehicle {
         print("Base Per KM :\(self.basePerKm.currency())" )
         print("Is Accesibility Service Available :\(self.isAccessibilityServiceAvailable)")
         print("Is Wifi Available :\(self.isWifiAvailable)")
-        if driver.count==0{
-            print("*******************************************************")
-                  print("IT IS SELF DRIVE**NO DRIVER")
-            print("*******************************************************")
-              }
-              else{
-            print("*******************************************************")
-              for i in driver{
-                  i.value.display()
-                  }
+       if driver.count==0
+              {
+                  print("*******************************************************")
+                        print("IT IS SELF DRIVE**NO DRIVER")
+                  print("*******************************************************")
+                    }
+                    else
+              {
+                  print("*******************************************************")
+                    for i in driver{
+                        i.value.display()
+                        }
+                
             print("*******************************************************")
         }
     }
