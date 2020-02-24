@@ -53,7 +53,7 @@ class Customers:Person{
         self.birthDate = birthDate.dateSet(input:birthDate)
         
        self.userName = userName
-        self.password = password
+        self.password = password.encrypt(password: password)
         self.address = address
         self.city = city
         //self.objVehicle=objVehicle
@@ -69,8 +69,8 @@ class Customers:Person{
         else{
             throw ErrorHandling.InvalidMobileNumber
             }
-        self.age=AgeCalculation.calculateAge(birthDate: birthDate)
-           }
+        self.age=AgeCalculation.calculateAge(birthDate: birthDate) 
+    }
     
     func addVehicle(vehicle: VehicleRent, vehicleRentId: Int)
        {

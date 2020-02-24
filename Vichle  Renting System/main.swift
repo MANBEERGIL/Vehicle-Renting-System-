@@ -9,9 +9,12 @@
 import Foundation
 
 do{
-    var d1=try Driver(id: 1, firstName: "mohsin", lastName: "khan", gender: .MALE, birthDate: "22/10/1992",address:"31 park ave",city:"Brampton", mobileNumber: 6598764567, emailId: "mohsinkhan@yahoo.com", userName:"mohsin123",
+    let o1=try Owner(id: 01, firstName: "Komal", lastName: "subhra", gender: .FEMALE, birthDate: "22/07/1998",address:"43 drink water",city:"brampton", mobileNumber: 8976574567, emailId: "cutykomal@gmail.com", userName: "cuty123", password: "subhra567",companyTitle:"longes",businessLandLineNumber:"(418)678567",website:"www.komu.com")
+    let o2=try Owner(id: 02, firstName: "geetanjali", lastName: "gupta", gender: .FEMALE, birthDate: "26/07/1996",address:"43 gorewood water",city:"brampton", mobileNumber: 7876574567, emailId: "geetgupta@gmail.com", userName: "geeth", password: "thg56",companyTitle:"longes",businessLandLineNumber:"(418)678674",website:"www.geetwork.com")
+    
+    let d1=try Driver(id: 1, firstName: "mohsin", lastName: "khan", gender: .MALE, birthDate: "22/10/1992",address:"31 park ave",city:"Brampton", mobileNumber: 6598764567, emailId: "mohsinkhan@yahoo.com", userName:"mohsin123",
         password:"aksd23",drivingLicenseNumber:"DRI78TY",isDrivingHistoryCleared:true,salary:700)
-    var d2=try Driver(id: 2, firstName: "mandeep", lastName: "khan", gender: .FEMALE, birthDate: "22/10/1992",address:"31 gorewood ave",city:"Brampton", mobileNumber: 6598765676, emailId: "ayesh123@yahoo.com", userName:"ayesha123",
+    let d2=try Driver(id: 2, firstName: "mandeep", lastName: "khan", gender: .FEMALE, birthDate: "22/10/1992",address:"31 gorewood ave",city:"Brampton", mobileNumber: 6598765676, emailId: "ayesh123@yahoo.com", userName:"ayesha123",
            password:"ak8973",drivingLicenseNumber:"DRI28VB",isDrivingHistoryCleared:true,salary:750)
     
     let v1 = VehicleRent(vehicleRentId:01,rentStartDate: "22/07/2019", rentEndDate: "22/08/2019", kmDrived: 500)
@@ -25,15 +28,25 @@ do{
     
     
      let b2=Bus(vehicleIdentificationNumber :"ACVG3",vehicleDiscription :"Mini BUS",manufacturerName :"honda",vehicleType:.BUS,isSelfDrive : false,driverName:"mohsin khan",isInsured:true,insauranceProviderName : "tata ltd",noOfSeats: 14,fuelType: .DIESEL,baseRatePerDay:15,basePerKm:8,isAccessibilityServiceAvailable: true,isWifiAvailable: true)
-    let ca1=Car(vehicleIdentificationNumber :"CAR01",vehicleDiscription :"LONG AND COMFORTABLE",manufacturerName :"MERCEDES",vehicleType:.CAR,carColor:"RED",isSelfDrive : false,driverName:"mandeep khan",isInsured:false,insauranceProviderName : nil,noOfSeats: 6,fuelType: .PETROL,baseRatePerDay:20,basePerKm:5) 
+    
+    
+    let ca1=Car(vehicleIdentificationNumber :"CAR01",vehicleDiscription :"LONG AND COMFORTABLE",manufacturerName :"MERCEDES",vehicleType:.CAR,carColor:"RED",isSelfDrive : false,driverName:"mandeep khan",isInsured:false,insauranceProviderName : nil,noOfSeats: 6,fuelType: .PETROL,baseRatePerDay:20,basePerKm:5)
+    
+    let mc1=MotorCycle(vehicleIdentificationNumber :"MC001",vehicleDiscription :"2-seater comfortable",manufacturerName :"HONDA",vehicleType:.MOTORCYCLE,milage:42,maxTopSpeed:60,isSelfDrive : true,driverName:nil,isInsured:false,insauranceProviderName : nil,noOfSeats: 2,fuelType: .PETROL,baseRatePerDay:10,basePerKm:2)
     
     let c = try Customers(id: 1, firstName: "Manbeer", lastName: "kaur", gender: .FEMALE, birthDate: "02/02/2020",  address: "32 Amberley Drive", city: "toronto", mobileNumber: 6476854431, emailId: "manbeergill545@gmail.com", userName: "manbeer0", password: "ZcVdGh")
     //c.display()
     
     let c1 = try Customers(id: 2, firstName: "Geetanjali", lastName: "Gupta", gender: .FEMALE, birthDate: "02/03/1996", address: "91 gorewood Park", city: "Brampton", mobileNumber: 5862445283, emailId: "geetanjligupta154@gmail.com", userName: "happy123", password: "somi987")
-    let mc1=MotorCycle(vehicleIdentificationNumber :"MC001",vehicleDiscription :"2-seater comfortable",manufacturerName :"HONDA",vehicleType:.MOTORCYCLE,milage:42,maxTopSpeed:60,isSelfDrive : true,driverName:nil,isInsured:false,insauranceProviderName : nil,noOfSeats: 2,fuelType: .PETROL,baseRatePerDay:10,basePerKm:2)
+    
+    
+    
+    o1.addVehicleList(vehicleOwned: b1, vehicleIdentificationNumber: b1.vehicleIdentificationNumber)
+    o1.addVehicleList(vehicleOwned: b2, vehicleIdentificationNumber: b2.vehicleIdentificationNumber)
+    o2.addVehicleList(vehicleOwned: ca1, vehicleIdentificationNumber: ca1.vehicleIdentificationNumber)
+    o2.addVehicleList(vehicleOwned: mc1, vehicleIdentificationNumber: mc1.vehicleIdentificationNumber)
+    
    
-  
     ca1.addDriver(driverId: d1.id, driverObj: d1)
     b2.addDriver(driverId: d2.id,driverObj: d2)
     v1.addVehicle(vehicle: b1, vinNumber: b1.vehicleIdentificationNumber)
@@ -47,8 +60,8 @@ do{
     v4.addVehicle(vehicle: ca1, vinNumber: ca1.vehicleIdentificationNumber)
     c.addVehicle(vehicle: v4, vehicleRentId: v4.vehicleRentId)
     c.display()
-    //print(c1.customerAge)
-    
+    o1.display()
+    o2.display()
 }
 catch ErrorHandling.InvalidEmail{
     print("invalid email")

@@ -38,8 +38,9 @@ class Owner: Person{
     var businessLandLineNumber:String
     
     var website:String
+    var vehicleList = [String : Vehicle]()
     
-    init(id: Int, firstName: String, lastName: String, gender: Gender, birthDate: String, age: String,address:String,city:String, mobileNumber: Int, emailId: String, userName: String, password: String,companyTitle:String,businessLandLineNumber:String,website:String) throws
+    init(id: Int, firstName: String, lastName: String, gender: Gender, birthDate: String, address:String,city:String, mobileNumber: Int, emailId: String, userName: String, password: String,companyTitle:String,businessLandLineNumber:String,website:String) throws
     {
                self.id = id
                self.firstName = firstName
@@ -59,7 +60,7 @@ class Owner: Person{
                    throw ErrorHandling.InvalidEmail
               }
                self.userName = userName
-               self.password = password
+               self.password = password.encrypt(password: password)
                self.address = address
                self.city = city
                self.companyTitle = companyTitle
@@ -67,6 +68,15 @@ class Owner: Person{
                self.website = website
                 self.age=AgeCalculation.calculateAge(birthDate: birthDate)
        
+    }
+    func addVehicleList(vehicleOwned: Vehicle, vehicleIdentificationNumber: String)
+    {
+        vehicleList.updateValue(vehicleOwned, forKey: vehicleIdentificationNumber)
+    }
+    
+    func removeVehicleList(vehicleIdentificationNumber: String)
+    {
+        vehicleList.removeValue(forKey: vehicleIdentificationNumber)
     }
     
     func display() {
@@ -85,5 +95,14 @@ class Owner: Person{
                print("EmailID :\(String(describing: self.emailId))")
                print("UserName :\(self.userName)")
                print("Password :\(String(describing: self.password))")
+    if vehicleList.count == 0{
+            print("Owner has no vehicle")
+        } else{
+            for i in vehicleList{
+                i.value.display()
+                print("***********************************")
+                
+            }
+        }
     }
     }

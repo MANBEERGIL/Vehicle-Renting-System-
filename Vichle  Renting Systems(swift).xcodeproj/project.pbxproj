@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BD0827A623FF4D86005377E8 /* SigletonObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0827A523FF4D86005377E8 /* SigletonObject.swift */; };
 		BD0D0B682402FCB70032A428 /* Age Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D0B672402FCB70032A428 /* Age Calculation.swift */; };
 		BD0D0B6A240303E20032A428 /* enum+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D0B69240303E20032A428 /* enum+extension.swift */; };
-		BD0D0B6C24038D520032A428 /* DisplayDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0D0B6B24038D520032A428 /* DisplayDriver.swift */; };
 		BD465C7523F23C7B004E7C42 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD465C7423F23C7B004E7C42 /* main.swift */; };
 		BD465C7C23F23C8D004E7C42 /* person.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD465C7B23F23C8D004E7C42 /* person.swift */; };
 		BD465C7E23F23CCF004E7C42 /* customers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD465C7D23F23CCF004E7C42 /* customers.swift */; };
@@ -37,11 +35,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BD0827A523FF4D86005377E8 /* SigletonObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigletonObject.swift; sourceTree = "<group>"; };
 		BD0D0B672402FCB70032A428 /* Age Calculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Age Calculation.swift"; sourceTree = "<group>"; };
 		BD0D0B69240303E20032A428 /* enum+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "enum+extension.swift"; sourceTree = "<group>"; };
-		BD0D0B6B24038D520032A428 /* DisplayDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDriver.swift; sourceTree = "<group>"; };
-		BD465C7123F23C7B004E7C42 /* Vichle  Renting System */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Vichle  Renting System"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD465C7123F23C7B004E7C42 /* Vichle  Renting Systems(swift) */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Vichle  Renting Systems(swift)"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD465C7423F23C7B004E7C42 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BD465C7B23F23C8D004E7C42 /* person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = person.swift; sourceTree = "<group>"; };
 		BD465C7D23F23CCF004E7C42 /* customers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customers.swift; sourceTree = "<group>"; };
@@ -66,6 +62,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9BDC5E6D2404553B00E3A3A4 /* Vehicle */ = {
+			isa = PBXGroup;
+			children = (
+				BDC8BCB623F3B88A003786FB /* MotorCycle.swift */,
+				BDC8BCB423F3B84B003786FB /* Car.swift */,
+				BDC8BCB223F3B838003786FB /* Bus.swift */,
+				BD465C8123F23D08004E7C42 /* Vehicles.swift */,
+			);
+			path = Vehicle;
+			sourceTree = "<group>";
+		};
 		BD465C6823F23C7B004E7C42 = {
 			isa = PBXGroup;
 			children = (
@@ -77,7 +84,7 @@
 		BD465C7223F23C7B004E7C42 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BD465C7123F23C7B004E7C42 /* Vichle  Renting System */,
+				BD465C7123F23C7B004E7C42 /* Vichle  Renting Systems(swift) */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,18 +92,13 @@
 		BD465C7323F23C7B004E7C42 /* Vichle  Renting System */ = {
 			isa = PBXGroup;
 			children = (
+				BD0D0B672402FCB70032A428 /* Age Calculation.swift */,
+				BD0D0B69240303E20032A428 /* enum+extension.swift */,
+				9BDC5E6D2404553B00E3A3A4 /* Vehicle */,
 				BD94BAA623FE2100005E9AD1 /* Person */,
-				BD465C8123F23D08004E7C42 /* Vehicles.swift */,
-				BDC8BCB223F3B838003786FB /* Bus.swift */,
-				BDC8BCB423F3B84B003786FB /* Car.swift */,
-				BDC8BCB623F3B88A003786FB /* MotorCycle.swift */,
 				BDC8BCB823F3B99D003786FB /* vehicleRent.swift */,
 				BDC8BCBE23F3BBAC003786FB /* DisplayDelegate.swift */,
 				BD465C7423F23C7B004E7C42 /* main.swift */,
-				BD0827A523FF4D86005377E8 /* SigletonObject.swift */,
-				BD0D0B672402FCB70032A428 /* Age Calculation.swift */,
-				BD0D0B69240303E20032A428 /* enum+extension.swift */,
-				BD0D0B6B24038D520032A428 /* DisplayDriver.swift */,
 			);
 			path = "Vichle  Renting System";
 			sourceTree = "<group>";
@@ -115,9 +117,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BD465C7023F23C7B004E7C42 /* Vichle  Renting System */ = {
+		BD465C7023F23C7B004E7C42 /* Vichle  Renting Systems(swift) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BD465C7823F23C7B004E7C42 /* Build configuration list for PBXNativeTarget "Vichle  Renting System" */;
+			buildConfigurationList = BD465C7823F23C7B004E7C42 /* Build configuration list for PBXNativeTarget "Vichle  Renting Systems(swift)" */;
 			buildPhases = (
 				BD465C6D23F23C7B004E7C42 /* Sources */,
 				BD465C6E23F23C7B004E7C42 /* Frameworks */,
@@ -127,9 +129,9 @@
 			);
 			dependencies = (
 			);
-			name = "Vichle  Renting System";
+			name = "Vichle  Renting Systems(swift)";
 			productName = "Vichle  Renting System";
-			productReference = BD465C7123F23C7B004E7C42 /* Vichle  Renting System */;
+			productReference = BD465C7123F23C7B004E7C42 /* Vichle  Renting Systems(swift) */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -147,7 +149,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BD465C6C23F23C7B004E7C42 /* Build configuration list for PBXProject "Vichle  Renting System" */;
+			buildConfigurationList = BD465C6C23F23C7B004E7C42 /* Build configuration list for PBXProject "Vichle  Renting Systems(swift)" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -160,7 +162,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BD465C7023F23C7B004E7C42 /* Vichle  Renting System */,
+				BD465C7023F23C7B004E7C42 /* Vichle  Renting Systems(swift) */,
 			);
 		};
 /* End PBXProject section */
@@ -173,13 +175,11 @@
 				BDC8BCB323F3B838003786FB /* Bus.swift in Sources */,
 				BDC8BCBF23F3BBAC003786FB /* DisplayDelegate.swift in Sources */,
 				BD465C7C23F23C8D004E7C42 /* person.swift in Sources */,
-				BD0D0B6C24038D520032A428 /* DisplayDriver.swift in Sources */,
 				BDC8BCB523F3B84B003786FB /* Car.swift in Sources */,
 				BDC8BCB123F3B81E003786FB /* Owner.swift in Sources */,
 				BD0D0B6A240303E20032A428 /* enum+extension.swift in Sources */,
 				BD465C7E23F23CCF004E7C42 /* customers.swift in Sources */,
 				BDC8BCB723F3B88A003786FB /* MotorCycle.swift in Sources */,
-				BD0827A623FF4D86005377E8 /* SigletonObject.swift in Sources */,
 				BD465C7523F23C7B004E7C42 /* main.swift in Sources */,
 				BD465C8223F23D08004E7C42 /* Vehicles.swift in Sources */,
 				BD0D0B682402FCB70032A428 /* Age Calculation.swift in Sources */,
@@ -325,7 +325,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BD465C6C23F23C7B004E7C42 /* Build configuration list for PBXProject "Vichle  Renting System" */ = {
+		BD465C6C23F23C7B004E7C42 /* Build configuration list for PBXProject "Vichle  Renting Systems(swift)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BD465C7623F23C7B004E7C42 /* Debug */,
@@ -334,7 +334,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BD465C7823F23C7B004E7C42 /* Build configuration list for PBXNativeTarget "Vichle  Renting System" */ = {
+		BD465C7823F23C7B004E7C42 /* Build configuration list for PBXNativeTarget "Vichle  Renting Systems(swift)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BD465C7923F23C7B004E7C42 /* Debug */,

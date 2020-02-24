@@ -1,5 +1,5 @@
 //
-//  Car.swift
+//  MotorCycle.swift
 //  Vichle  Renting System
 //
 //  Created by MANBEER KAUR on 2020-02-11.
@@ -7,10 +7,9 @@
 //
 
 import Foundation
-enum carTypes {
-    case BMW,AUDI
-}
-class Car:Vehicle{
+class MotorCycle: Vehicle { 
+    
+    var fuelType: typesOfFuel
     
     var vehicleType: VehicleTypes
     
@@ -30,72 +29,74 @@ class Car:Vehicle{
     
     var noOfSeats: Int
     
-    var fuelType: typesOfFuel
-    
     var baseRatePerDay: Int
     
     var basePerKm: Int
-    var carColor: String
-    var driver = [Int: Driver]()
+    var milage:Int
     
-    init(vehicleIdentificationNumber :String,vehicleDiscription :String,manufacturerName :String,vehicleType:VehicleTypes,carColor:String,isSelfDrive : Bool,driverName:String,isInsured:Bool,insauranceProviderName : String?,noOfSeats: Int,fuelType: typesOfFuel,baseRatePerDay:Int,basePerKm:Int)
+    var maxTopSpeed: Int
+     var driver = [Int: Driver]()
+    
+    init(vehicleIdentificationNumber :String,vehicleDiscription :String,manufacturerName :String,vehicleType:VehicleTypes,milage:Int,maxTopSpeed:Int,isSelfDrive : Bool,driverName:String?,isInsured:Bool,insauranceProviderName : String?,noOfSeats: Int,fuelType: typesOfFuel,baseRatePerDay:Int,basePerKm:Int)
     {
         self.vehicleIdentificationNumber = vehicleIdentificationNumber
         self.vehicleDiscription = vehicleDiscription
+   
         self.vehicleType = vehicleType
+        self.milage = milage
+        self.maxTopSpeed = maxTopSpeed
         self.manufacturerName = manufacturerName
         self.isSelfDrive = isSelfDrive
+        if isSelfDrive==false{
         self.driverName = driverName
+        }
         self.isInsured = isInsured
-        self.insauranceProviderName = insauranceProviderName
+        if isInsured==true{
+            self.insauranceProviderName = insauranceProviderName}
         self.noOfSeats = noOfSeats
         self.fuelType = fuelType
         self.baseRatePerDay = baseRatePerDay
         self.basePerKm = basePerKm
-       self.carColor = carColor
-    }
     
+    }
     func addDriver(driverId: Int, driverObj: Driver)
        {
            driver.updateValue(driverObj, forKey: driverId)
        }
-    func removeDriver(driverId: Int, driverObj: Driver)
+    func removeDriver(driverId: Int)
     {
         driver.removeValue(forKey: driverId)
     }
-       
-     
+    
     func display() {
-        print("_____________Car Details________________")
+        print("_____________MotorCycle Details________________")
         print("Vehicle Identification Number : \(self.vehicleIdentificationNumber)")
         print("Vehicle Disctription : \(self.vehicleDiscription)")
         print("Vehicle Type : \(self.vehicleType)")
-       
-        print("Car Color :\(self.carColor)")
         print("Manufacturer Name :\(self.manufacturerName) ")
+        print("Milage :\(self.milage.speed())")
+        print("Maximum Top Speed :\(self.maxTopSpeed.speed())")
         print("Is Self Drive :\(self.isSelfDrive)")
         print("Driver Name :\(String(describing: self.driverName)) ")
         print("Is Insured :\(self.isInsured)")
         print("Insaurance Provider Name :\(String(describing: self.insauranceProviderName))")
         print("No Of Seats :\(self.noOfSeats)")
         print("Fuel Type :\(self.fuelType)")
-            print("Base Rate Per Day :\(self.baseRatePerDay.currency())")
-            print("Base Per KM :\(self.basePerKm.currency())" )
+        print("Base Rate Per Day :\(self.baseRatePerDay.currency())")
+        print("Base Per KM :\(self.basePerKm.currency())" )
         
-        if driver.count==0{
             print("*******************************************************")
-            print("IT IS SELF DRIVE**NO DRIVER")
+        if driver.count==0{
+            print("IT IS SELF DRIVE")
             print("*******************************************************")
         }
         else{
-            print("*******************************************************")
-        for i in driver{
+            for i in driver{
             i.value.display()
-            }
-            
+            print("*******************************************************")
         }
-        print("*******************************************************")
-    }
+      
+        }}
     
 
 }

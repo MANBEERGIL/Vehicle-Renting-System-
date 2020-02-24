@@ -30,11 +30,35 @@ extension String{
         }
         return "Incorrect Date"
     }
-    
+    func encrypt(password:String)->String
+    {
+     let charArray=Array(password)
+        var s1=String()
+        for i in charArray
+        {
+            var a=i.asciiValue
+            a=a!+1
+            s1 = s1+String(UnicodeScalar(UInt8?(a!)!))
+            }
+        
+        return s1
+        
+    }
+    func decrypt(password:String)->String{
+        let charArray=Array(password)
+        var s1=String()
+        for i in charArray
+        {
+            var a=i.asciiValue
+            a=a!-1
+        s1 = s1+String(UnicodeScalar(UInt8?(a!)!))
+        }
+       
+        return s1
+        
+    }
    
-    
-
-}
+    }
 extension Int{
     
    func isMobileNumberValid(mobile:Int) -> Bool{
@@ -42,6 +66,9 @@ extension Int{
     let mobileNumberRegEx = "[0-9]{10}"
     let mobileTest = NSPredicate(format: "SELF MATCHES %@", mobileNumberRegEx)
     return mobileTest.evaluate(with: mobile)*/
+    }
+    func km()->String{
+        return "\(self)km"
     }
     func currency() -> String
            {
@@ -52,12 +79,14 @@ extension Int{
         return "\(self)km\\hr"
     }
 }
-    extension Double{
+
+     extension Double{
         func currency() -> String
         {
             return "$\(self)"
         }
     }
+
 extension Float{
        func currency() -> String
        {

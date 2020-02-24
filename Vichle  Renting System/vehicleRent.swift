@@ -57,12 +57,9 @@ init(vehicleRentId:Int,rentStartDate: String,rentEndDate: String ,kmDrived:Int)
                     print("Rent Start Date : \(self.rentStartDate)")
                     print("Rent End Date : \(self.rentEndDate)")
                     print("Total Days: \(self.noOfDays)")
-                   
-                    print("Number of KM Drived : \(self.kmDrived)")
-                   
-                    print("=====================================================")
-                    print("Total rent to pay : \(totalBill.currency())")
-                    print("=====================================================")
+                   print("Number of KM Drived : \(self.kmDrived.km())")
+                    print("Total Bill : \(totalBill.currency())")
+                    print("####################################################")
                     
                 }
             }

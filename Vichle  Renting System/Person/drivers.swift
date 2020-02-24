@@ -56,7 +56,7 @@ class Driver: Person {
        
         self.emailId = emailId
         self.userName = userName
-        self.password = password
+        self.password = password.encrypt(password: password)
         self.drivingLicenseNumber = drivingLicenseNumber
         self.salary = salary
         self.isDrivingHistoryCleared = isDrivingHistoryCleared
@@ -76,7 +76,8 @@ class Driver: Person {
             print("City :\(self.city)")
             print("EmailID :\(String(describing: self.emailId))")
             print("UserName :\(userName)")
-            print("Password :\(String(describing: self.password))")
+            print("Encrypted Password :\(String(describing: self.password))")
+      //  print("Decrypted Password :\(String(describing: self.password.decrypt(password: self.password)))")
             print("Driving License Number : \(self.drivingLicenseNumber)")
             print("Is Driving History Cleared ? : \(self.isDrivingHistoryCleared)")
         print("Salary : \(self.salary.currency())")

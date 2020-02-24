@@ -1,5 +1,5 @@
 //
-//  MotorCycle.swift
+//  Bus.swift
 //  Vichle  Renting System
 //
 //  Created by MANBEER KAUR on 2020-02-11.
@@ -7,10 +7,12 @@
 //
 
 import Foundation
-class MotorCycle: Vehicle { 
-    
-    var fuelType: typesOfFuel
-    
+enum busType{
+    case MINI,VOLVO
+    }
+
+class Bus: Vehicle {
+
     var vehicleType: VehicleTypes
     
     var vehicleIdentificationNumber: String
@@ -29,71 +31,79 @@ class MotorCycle: Vehicle {
     
     var noOfSeats: Int
     
+    var fuelType: typesOfFuel
+     
     var baseRatePerDay: Int
     
     var basePerKm: Int
-    var milage:Int
     
-    var maxTopSpeed: Int
-     var driver = [Int: Driver]()
+    //var typeOfBus:busType
     
-    init(vehicleIdentificationNumber :String,vehicleDiscription :String,manufacturerName :String,vehicleType:VehicleTypes,milage:Int,maxTopSpeed:Int,isSelfDrive : Bool,driverName:String?,isInsured:Bool,insauranceProviderName : String?,noOfSeats: Int,fuelType: typesOfFuel,baseRatePerDay:Int,basePerKm:Int)
+    var isAccessibilityServiceAvailable: Bool;
+    
+    var isWifiAvailable: Bool;
+      var driver = [Int: Driver]()
+    
+    init(vehicleIdentificationNumber :String,vehicleDiscription :String,manufacturerName :String,vehicleType:VehicleTypes,isSelfDrive : Bool,driverName:String?,isInsured:Bool,insauranceProviderName : String?,noOfSeats: Int,fuelType: typesOfFuel,baseRatePerDay:Int,basePerKm:Int,isAccessibilityServiceAvailable: Bool,isWifiAvailable: Bool)
     {
         self.vehicleIdentificationNumber = vehicleIdentificationNumber
         self.vehicleDiscription = vehicleDiscription
-   
         self.vehicleType = vehicleType
-        self.milage = milage
-        self.maxTopSpeed = maxTopSpeed
         self.manufacturerName = manufacturerName
-        self.isSelfDrive = isSelfDrive
-        self.driverName = driverName
+        
+            self.isSelfDrive = isSelfDrive
+        if isSelfDrive==false{
+            self.driverName = driverName}
         self.isInsured = isInsured
-        self.insauranceProviderName = insauranceProviderName
+        if isInsured==true{
+            self.insauranceProviderName = insauranceProviderName}
         self.noOfSeats = noOfSeats
         self.fuelType = fuelType
         self.baseRatePerDay = baseRatePerDay
         self.basePerKm = basePerKm
-    
+        self.isAccessibilityServiceAvailable = isAccessibilityServiceAvailable
+        self.isWifiAvailable = isWifiAvailable
     }
     func addDriver(driverId: Int, driverObj: Driver)
+          {
+              driver.updateValue(driverObj, forKey: driverId)
+          }
+       func removeDriver(driverId: Int)
        {
-           driver.updateValue(driverObj, forKey: driverId)
+           driver.removeValue(forKey: driverId)
        }
-    func removeDriver(driverId: Int, driverObj: Driver)
-    {
-        driver.removeValue(forKey: driverId)
-    }
+          
     
     func display() {
-        print("_____________MotorCycle Details________________")
+        
+        print("_____________Bus Details________________")
         print("Vehicle Identification Number : \(self.vehicleIdentificationNumber)")
         print("Vehicle Disctription : \(self.vehicleDiscription)")
-        print("Vehicle Type : \(self.vehicleType)")
+      
         print("Manufacturer Name :\(self.manufacturerName) ")
-        print("Milage :\(self.milage.speed())")
-        print("Maximum Top Speed :\(self.maxTopSpeed.speed())")
         print("Is Self Drive :\(self.isSelfDrive)")
-        print("Driver Name :\(String(describing: self.driverName)) ")
+        print("Driver Name :\(self.driverName ?? "It is self Drive") ")
         print("Is Insured :\(self.isInsured)")
         print("Insaurance Provider Name :\(String(describing: self.insauranceProviderName))")
         print("No Of Seats :\(self.noOfSeats)")
         print("Fuel Type :\(self.fuelType)")
         print("Base Rate Per Day :\(self.baseRatePerDay.currency())")
         print("Base Per KM :\(self.basePerKm.currency())" )
-        
-            print("*******************************************************")
+        print("Is Accesibility Service Available :\(self.isAccessibilityServiceAvailable)")
+        print("Is Wifi Available :\(self.isWifiAvailable)")
         if driver.count==0{
-            print("IT IS SELF DRIVE")
+            print("*******************************************************")
+                  print("IT IS SELF DRIVE**NO DRIVER")
+            print("*******************************************************")
+              }
+              else{
+            print("*******************************************************")
+              for i in driver{
+                  i.value.display()
+                  }
             print("*******************************************************")
         }
-        else{
-            for i in driver{
-            i.value.display()
-            print("*******************************************************")
-        }
-      
-        }}
+    }
     
 
 }
