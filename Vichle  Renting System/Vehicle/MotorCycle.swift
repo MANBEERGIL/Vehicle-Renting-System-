@@ -72,7 +72,8 @@ class MotorCycle: Vehicle
         driver.removeValue(forKey: driverId)
     }
     
-    func display() {
+    func display()
+    {
         print("_____________MotorCycle Details________________")
         print("Vehicle Identification Number : \(self.vehicleIdentificationNumber)")
         print("Vehicle Disctription : \(self.vehicleDiscription)")
@@ -100,7 +101,9 @@ class MotorCycle: Vehicle
             print("*******************************************************")
         }
       
-        }}
+        }
+        
+    }
     
 
-}
+
