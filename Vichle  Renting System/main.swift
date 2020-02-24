@@ -60,8 +60,7 @@ do{
     v4.addVehicle(vehicle: ca1, vinNumber: ca1.vehicleIdentificationNumber)
     c.addVehicle(vehicle: v4, vehicleRentId: v4.vehicleRentId)
     c.display()
-    o1.display()
-    o2.display()
+    
 }
 catch ErrorHandling.InvalidEmail{
     print("invalid email")
