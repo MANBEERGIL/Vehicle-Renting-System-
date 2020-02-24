@@ -71,9 +71,9 @@ class Bus: Vehicle {
         self.isWifiAvailable = isWifiAvailable
     }
     func addDriver(driverId: Int, driverObj: Driver)
-          {
-              driver.updateValue(driverObj, forKey: driverId)
-          }
+    {
+        driver.updateValue(driverObj, forKey: driverId)
+    }
        func removeDriver(driverId: Int)
        {
            driver.removeValue(forKey: driverId)
