@@ -51,8 +51,11 @@ class Car:Vehicle
         self.driverName = driverName
         }
         self.isInsured = isInsured
-        if isInsured==true{
-            self.insauranceProviderName = insauranceProviderName}
+        if isInsured==true
+        {
+            self.insauranceProviderName = insauranceProviderName
+            
+        }
         self.noOfSeats = noOfSeats
         self.fuelType = fuelType
         self.baseRatePerDay = baseRatePerDay
