@@ -52,11 +52,17 @@ class Bus: Vehicle {
         self.manufacturerName = manufacturerName
         
             self.isSelfDrive = isSelfDrive
-        if isSelfDrive==false{
-            self.driverName = driverName}
+        if isSelfDrive==false
+        {
+            self.driverName = driverName
+            
+        }
         self.isInsured = isInsured
-        if isInsured==true{
-            self.insauranceProviderName = insauranceProviderName}
+        if isInsured==true
+        {
+            self.insauranceProviderName = insauranceProviderName
+            
+        }
         self.noOfSeats = noOfSeats
         self.fuelType = fuelType
         self.baseRatePerDay = baseRatePerDay
