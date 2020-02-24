@@ -23,7 +23,7 @@ protocol Person:DisplayDelegate{
     var mobileNumber:Int{get set}
     var emailId:String{get set}
     var userName:String{get set}
-    var password:String{get set}
+   
     
     
     
