@@ -73,7 +73,8 @@ class Car:Vehicle
     }
        
      
-    func display() {
+    func display()
+    {
         print("_____________Car Details________________")
         print("Vehicle Identification Number : \(self.vehicleIdentificationNumber)")
         print("Vehicle Disctription : \(self.vehicleDiscription)")
