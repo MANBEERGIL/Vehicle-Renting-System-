@@ -36,20 +36,20 @@ class MotorCycle: Vehicle
     var milage:Int
     
     var maxTopSpeed: Int
-     var driver = [Int: Driver]()
+    var driver = [Int: Driver]()
     
     init(vehicleIdentificationNumber :String,vehicleDiscription :String,manufacturerName :String,vehicleType:VehicleTypes,milage:Int,maxTopSpeed:Int,isSelfDrive : Bool,driverName:String?,isInsured:Bool,insauranceProviderName : String?,noOfSeats: Int,fuelType: typesOfFuel,baseRatePerDay:Int,basePerKm:Int)
     {
         self.vehicleIdentificationNumber = vehicleIdentificationNumber
         self.vehicleDiscription = vehicleDiscription
-   
+        
         self.vehicleType = vehicleType
         self.milage = milage
         self.maxTopSpeed = maxTopSpeed
         self.manufacturerName = manufacturerName
         self.isSelfDrive = isSelfDrive
         if isSelfDrive==false{
-        self.driverName = driverName
+            self.driverName = driverName
         }
         self.isInsured = isInsured
         if isInsured==true
@@ -61,12 +61,12 @@ class MotorCycle: Vehicle
         self.fuelType = fuelType
         self.baseRatePerDay = baseRatePerDay
         self.basePerKm = basePerKm
-    
+        
     }
     func addDriver(driverId: Int, driverObj: Driver)
-       {
-           driver.updateValue(driverObj, forKey: driverId)
-       }
+    {
+        driver.updateValue(driverObj, forKey: driverId)
+    }
     func removeDriver(driverId: Int)
     {
         driver.removeValue(forKey: driverId)
@@ -90,20 +90,20 @@ class MotorCycle: Vehicle
         print("Base Rate Per Day :\(self.baseRatePerDay.currency())")
         print("Base Per KM :\(self.basePerKm.currency())" )
         
-            print("*******************************************************")
+        print("*******************************************************")
         if driver.count==0{
             print("IT IS SELF DRIVE")
             print("*******************************************************")
         }
-       else{
-                  for i in driver{
-                  i.value.display()
-                  print("*******************************************************")
-              }
-      
+        else{
+            for i in driver{
+                i.value.display()
+                print("*******************************************************")
+            }
+            
         }
         
     }
     
-
+    
 }

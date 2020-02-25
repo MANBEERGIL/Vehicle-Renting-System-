@@ -9,10 +9,10 @@
 import Foundation
 enum busType{
     case MINI,VOLVO
-    }
+}
 
 class Bus: Vehicle {
-
+    
     var vehicleType: VehicleTypes
     
     var vehicleIdentificationNumber: String
@@ -32,7 +32,7 @@ class Bus: Vehicle {
     var noOfSeats: Int
     
     var fuelType: typesOfFuel
-     
+    
     var baseRatePerDay: Int
     
     var basePerKm: Int
@@ -42,7 +42,7 @@ class Bus: Vehicle {
     var isAccessibilityServiceAvailable: Bool;
     
     var isWifiAvailable: Bool;
-      var driver = [Int: Driver]()
+    var driver = [Int: Driver]()
     
     init(vehicleIdentificationNumber :String,vehicleDiscription :String,manufacturerName :String,vehicleType:VehicleTypes,isSelfDrive : Bool,driverName:String?,isInsured:Bool,insauranceProviderName : String?,noOfSeats: Int,fuelType: typesOfFuel,baseRatePerDay:Int,basePerKm:Int,isAccessibilityServiceAvailable: Bool,isWifiAvailable: Bool)
     {
@@ -51,7 +51,7 @@ class Bus: Vehicle {
         self.vehicleType = vehicleType
         self.manufacturerName = manufacturerName
         
-            self.isSelfDrive = isSelfDrive
+        self.isSelfDrive = isSelfDrive
         if isSelfDrive==false
         {
             self.driverName = driverName
@@ -74,18 +74,18 @@ class Bus: Vehicle {
     {
         driver.updateValue(driverObj, forKey: driverId)
     }
-       func removeDriver(driverId: Int)
-       {
-           driver.removeValue(forKey: driverId)
-       }
-          
+    func removeDriver(driverId: Int)
+    {
+        driver.removeValue(forKey: driverId)
+    }
+    
     
     func display() {
         
         print("_____________Bus Details________________")
         print("Vehicle Identification Number : \(self.vehicleIdentificationNumber)")
         print("Vehicle Disctription : \(self.vehicleDiscription)")
-      
+        
         print("Manufacturer Name :\(self.manufacturerName) ")
         print("Is Self Drive :\(self.isSelfDrive)")
         print("Driver Name :\(self.driverName ?? "It is self Drive") ")
@@ -97,23 +97,23 @@ class Bus: Vehicle {
         print("Base Per KM :\(self.basePerKm.currency())" )
         print("Is Accesibility Service Available :\(self.isAccessibilityServiceAvailable)")
         print("Is Wifi Available :\(self.isWifiAvailable)")
-       if driver.count==0
-              {
-                  print("*******************************************************")
-                        print("IT IS SELF DRIVE**NO DRIVER")
-                  print("*******************************************************")
-                    }
-                    else
-              {
-                  print("*******************************************************")
-                   for i in driver
-                                      {
-                                          i.value.display()
-                                          }
-                
+        if driver.count==0
+        {
+            print("*******************************************************")
+            print("IT IS SELF DRIVE**NO DRIVER")
+            print("*******************************************************")
+        }
+        else
+        {
+            print("*******************************************************")
+            for i in driver
+            {
+                i.value.display()
+            }
+            
             print("*******************************************************")
         }
     }
     
-
+    
 }
